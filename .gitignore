@@ -1,0 +1,55 @@
+## Игнорировать файлы Visual Studio
+*.suo
+*.user
+*.sln.docstates
+*.cache
+*.bak
+*.ncb
+*.aps
+
+## Игнорировать папки сборки и артефакты
+[Bb]in/
+[Oo]bj/
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+[Bb]uild/
+
+## Игнорировать временные файлы
+*.tmp
+*.log
+*.tlog
+*.pdb
+*.ilk
+*.idb
+
+## Игнорировать папки NuGet
+packages/
+*.nupkg
+!packages/repositories.config
+
+## Игнорировать файлы и папки Rider (если используется)
+.idea/
+
+## Игнорировать файлы конфигурации VS Code (если используется)
+.vscode/
+
+## Игнорировать файлы тестов
+[Tt]est[Rr]esult*/
+*.trx
+*.VisualState.xml
+
+## Игнорировать локальные настройки
+*.csproj.user
+*.pubxml
+*.publishproj
+
+## Игнорировать зависимости
+[Pp]ackages/
+*.dll
+*.exe
+
+## Игнорировать macOS/Unix файлы
+.DS_Store
+Thumbs.db
