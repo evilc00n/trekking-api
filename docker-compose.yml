@@ -1,0 +1,29 @@
+version: "3.9"
+
+services:
+  trekking-api:
+    image: trekking-api  
+    build:
+      context: .  
+      dockerfile: Dockerfile
+    container_name: trekking-api-container
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - /home/user/certs:/app/certs:ro
+      - /home/user/logs:/app/logs
+    environment:
+      ASPNETCORE_URLS: ${ASPNETCORE_URLS}
+      ASPNETCORE_Kestrel__Certificates__Default__Path: ${ASPNETCORE_Kestrel__Certificates__Default__Path}
+      ASPNETCORE_Kestrel__Certificates__Default__Password: ${ASPNETCORE_Kestrel__Certificates__Default__Password}
+      REDIS_CONNECTION_STRING: ${REDIS_CONNECTION_STRING}
+      USER_DB: ${USER_DB}
+      ALLOWED_ORIGIN: ${ALLOWED_ORIGIN}
+      MINIO_ENDPOINT: ${MINIO_ENDPOINT}
+      MINIO_ACCESS_KEY: ${MINIO_ACCESS_KEY}
+      MINIO_SECRET_KEY: ${MINIO_SECRET_KEY}
+      MINIO_WITH_SSL: ${MINIO_WITH_SSL}
+      MINIO_BUCKET_NAME: ${MINIO_BUCKET_NAME}
+
+    restart: always
